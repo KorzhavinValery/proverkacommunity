@@ -1,17 +1,58 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Arrays;
+import java.util.Collections;
+
+
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+task1(); task2(); task6(); task3();
     }
+
+    public static void task6() {
+        double number = 5;
+        double exponent = 2;
+        System.out.println("Число " + number + " в квадрате = " + Math.pow(number, exponent));
+    }
+
+    public static void task1() {
+        Integer[] nums = {1, 2, 3};
+        System.out.println(Arrays.toString(nums));
+        Collections.reverse(Arrays.asList(nums));
+        System.out.println(Arrays.toString(nums));
+    }
+
+    public static void task2() {
+        String word ="RACEcar";
+        isPalindrome(word);
+    }
+    public static String reverseString(String word){
+        String reversedWord = "";
+        for (int i = word.length() - 1; i >= 0; --i)
+            reversedWord += word.charAt(i);
+        return reversedWord;
+
+
+    }
+    public static Boolean isPalindrome(String word) {
+        word = word.toLowerCase();
+        if(word.equals(reverseString(word))){
+            System.out.println("Полиндром");
+        }else{
+            System.out.println("Не полиндром");
+        }
+        return word.equals(reverseString(word));
+    }
+
+
+
+    public static void task3() {
+        String str = "Привет  мир!";
+        int middleIndex = str.length() / 2;
+        String firstHalf = str.substring(0, middleIndex);
+        String secondHalf = str.substring(middleIndex);
+
+        System.out.println(firstHalf);
+        System.out.println(secondHalf);
+    }
+
 }
